@@ -9,10 +9,18 @@ function PlantList() {
     .then(res => setPlants(plants => plants = res))
   }, [])
 
-  
+  const plantList = plants.map(plant => (
+    <PlantCard 
+      id ={plant.id}
+      name = {plant.name}
+      image = {plant.image}
+      price = {plant.price}
+      key = {plant.id}
+    />
+  ))
 
   return (
-    <ul className="cards">{/* render PlantCards components in here */}</ul>
+    <ul className="cards">{ plantList }</ul>
   );
 }
 
