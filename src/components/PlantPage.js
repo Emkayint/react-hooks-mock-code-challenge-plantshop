@@ -3,12 +3,12 @@ import NewPlantForm from "./NewPlantForm";
 import PlantList from "./PlantList";
 import Search from "./Search";
 
-function PlantPage() {
+function PlantPage({ onFilter, filterWith }) {
   return (
     <main>
       <NewPlantForm />
-      <Search />
-      <PlantList />
+      <Search onFilter = { onFilter }/>
+      <PlantList myFilter = { filterWith }/>
     </main>
   );
 }
